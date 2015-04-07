@@ -6,15 +6,22 @@ export default Ember.Controller.extend({
       var user = this.get('model');
       user.register().then((user) => {
         this.get('session').login(user);
-        this.transitionToRoute('dashboard');
+        this.doTransition();
       }, () => {});
     },
     login: function() {
       var user = this.get('model');
       user.login().then((user) => {
         this.get('session').login(user);
-        this.transitionToRoute('dashboard');
+        this.doTransition();
       }, () => {});
+    }
+  },
+  doTransition: function() {
+    if(this.get('session.requestedTransition')) {
+      this.get('session.requestedTransition').retry();
+    } else {
+      this.transitionToRoute('dashboard');
     }
   }
 });

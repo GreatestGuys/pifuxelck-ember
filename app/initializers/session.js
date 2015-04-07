@@ -10,7 +10,10 @@ var Session = Ember.Object.extend({
       this.set('_currentUser', user);
       this.set('auth', this.store.metadataFor('user/user').auth);
     }
-  }
+  },
+  loggedIn: function() {
+    return (this.get('_currentUser') !== null);
+  }.property('_currentUser')
 });
 
 export function initialize(container, application) {
