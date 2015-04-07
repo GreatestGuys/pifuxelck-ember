@@ -6,6 +6,7 @@ export default ApplicationSerializer.extend(DS.EmbeddedRecordsMixin, {
     lines: { embedded: 'always' }
   },
   normalizePayload: function(payload) {
+    // TODO: Replace with Ember.guidFor(line)
     var id = 1;
     var ret = {};
     payload.lines.forEach(function(line) {

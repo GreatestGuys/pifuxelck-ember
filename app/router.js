@@ -9,6 +9,9 @@ Router.map(function() {
   this.route('dashboard');
   this.route('user', function() {
   });
+  this.route('game', function() {
+    this.route('respond');
+  });
 });
 
 export default Router;

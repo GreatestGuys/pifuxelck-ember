@@ -1,0 +1,5 @@
+<div class="row">
+  {{#each game in model}}
+  {{link-to "Label: game.previousTurn.label" "game.respond"}}<br/>
+  {{/each}}
+</div>

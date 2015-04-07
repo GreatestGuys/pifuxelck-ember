@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 var Session = Ember.Object.extend({
   _currentUser: null,
+  auth: 'jf',
   currentUser: function() {
     return this.get('_currentUser');
   }.property('_currentUser'),
@@ -24,6 +25,7 @@ export function initialize(container, application) {
   application.inject('route', 'session', 'global:session');
   application.inject('model', 'session', 'global:session');
   application.inject('serializer', 'session', 'global:session');
+  application.inject('adapter', 'session', 'global:session');
 }
 
 export default {
