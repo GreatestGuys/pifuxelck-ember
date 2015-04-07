@@ -1,1 +1,9 @@
-{{drawing/game-image drawing=model}}
+<form {{action "login" on="submit"}} class="login-form">
+  <h1>Enter Pifuxelck</h1>
+  <label class="sr-only">Username</label>
+  {{input class="form-control" autofocus=true name="username" placeholder="Username" value=model.displayName}}
+  <label class="sr-only">Password</label>
+  {{input class="form-control" name="password" placeholder="Password" value=model.password}}
+  <button class="login btn btn-primary btn-lg" type="submit">Login</button>
+  <button class="register btn btn-primary btn-lg" {{action "register"}}>Register</button>
+</form>

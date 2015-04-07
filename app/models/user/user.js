@@ -5,10 +5,10 @@ export default DS.Model.extend({
   password: DS.attr('string'),
   login: function() {
     this.set('loggingIn', true);
-    this.save();
+    return this.save();
   },
   register: function() {
     this.set('registering', true);
-    this.save();
+    return this.save();
   }
 });
