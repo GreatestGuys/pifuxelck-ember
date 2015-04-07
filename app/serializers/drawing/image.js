@@ -1,6 +1,7 @@
+import ApplicationSerializer from 'pifuxelck-ember/serializers/application';
 import DS from 'ember-data';
 
-export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+export default ApplicationSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     lines: { embedded: 'always' }
   },
@@ -17,8 +18,5 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     ret = this._super(ret);
     console.log(ret);
     return ret;
-  },
-  keyForAttribute: function(attr) {
-    return Ember.String.underscore(attr);
   }
 });
