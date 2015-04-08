@@ -1,5 +1,11 @@
 <div class="row">
-  {{#each game in model}}
-  {{link-to "Label: game.previousTurn.label" "game.respond" game}}<br/>
-  {{/each}}
+  <ul>
+    {{#each game in model}}
+      {{#if game.previousTurn.isDrawing}}
+        {{image-renderer imageModel=game.previousTurn.drawing}}
+      {{else}}
+        <li>{{#link-to "game.respond" game}}{{game.previousTurn.label}}{{/link-to}}</li>
+      {{/if}}
+    {{/each}}
+  </ul>
 </div>

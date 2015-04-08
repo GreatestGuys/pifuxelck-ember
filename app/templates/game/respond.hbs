@@ -1,1 +1,9 @@
-This is where the drawing view will go.
+{{#if model.previousTurn.isDrawing}}
+  {{image-renderer imageModel=model.previousTurn.drawing}}
+  label:<br/>
+  {{input}}
+{{else}}
+  "{{model.previousTurn.label}}"
+  <br/>
+  {{drawing-canvas newImage=newImage}}
+{{/if}}
