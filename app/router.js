@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('user', function() {
   });
   this.route('game', function() {
-    this.route('respond');
+    this.route('respond', { path: 'respond/:game_id'});
   });
 });
 
